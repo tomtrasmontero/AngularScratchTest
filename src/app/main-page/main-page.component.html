@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-sm-8">
+      <h1>Main Page of App</h1>
+      <div>
+        <h3>Create User or Department</h3>
+        <label for="userName">User Name</label>
+        <input type="text" [(ngModel)]="userName" id="userName">
+        <hr>
+        <label for="department">Department</label>
+        <input type="text" id="department" [(ngModel)]="department" >
+        <hr>
+        <button
+          class="btn btn-primary"
+          (click)="onSave(userName, 'user')"
+          [disabled]="!userName" >Save to Users
+        </button>
+        <button
+          class="btn btn-secondary"
+          (click)="onSave(department, 'dept')"
+          [disabled]="!department" >Save to Department
+        </button>
+        <button
+          class="btn btn-success"
+          (click)="saveUser(userName, department)"
+          [disabled]="!userName || !department " >Save User to Server
+        </button>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4>User List</h4>
+            <p *ngIf="usersCollection.length > 0; else thenBlockUser">
+              Number of Users: {{ usersCollection.length }}
+            </p>
+            <ng-template #thenBlockUser>
+              <p> No Users Registered</p>
+            </ng-template>
+          </div>
+          <div class="col-sm-6">
+            <h4>Dept List</h4>
+            <p *ngIf="deptCollection.length > 0; else thenBlockDept">
+              Number of Department: {{ deptCollection.length }}
+            </p>
+            <ng-template #thenBlockDept>
+              <p> No Department Registered</p>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

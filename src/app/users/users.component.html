@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>User Page</h3>
+  <div class="container">
+    <ul>
+      <li *ngFor="let user of usersCollection">
+        {{ user.name }} : {{ user.department }}
+      </li>
+    </ul>
+  </div>
+</div>
