@@ -18,8 +18,8 @@ export class UsersComponent implements OnInit {
     this.mainPageService.getUserFromServer()
       .subscribe(
         (response) => {
-          this.usersCollection = Object.values(response);
-        };
+          this.usersCollection = Object.values(response)
+        }
       )
   }
 

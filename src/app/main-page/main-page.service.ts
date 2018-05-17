@@ -35,7 +35,7 @@ export class MainPageService {
   getUserFromServer(): void {
     return this.http.get('https://angular5-91f56.firebaseio.com/data/users.json')
       .map(
-        (response: Response) => response.json();
+        (response: Response) => response.json()
       );
   }
 
